@@ -5,7 +5,6 @@ import LatestList from '../organism/LatestList'
 const MainPage = () => {
   return (
     <main>
-      <h2>MainPage</h2>
       <HeroSlider />
       <LatestList />
     </main>

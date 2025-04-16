@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import { getBannerData } from '../api/bannerApi'
+import '../assets/skeleton.css'
 
 import css from './HeroSolider.module.css'
 
@@ -27,7 +28,7 @@ const HeroSlider = () => {
         setLoading(true)
         const data = await getBannerData()
 
-        await delay(3000) // 1초 지연
+        await delay(1500) // 1초 지연
 
         setBanner(data)
         setLoading(false)
@@ -50,7 +51,7 @@ const HeroSlider = () => {
       >
         {loading ? (
           <SwiperSlide>
-            <div className={`${css.skletion} ${css.imgWrap}`}></div>
+            <div className={`skeleton ${css.imgWrap}`}></div>
           </SwiperSlide>
         ) : (
           banner.map(item => (

@@ -41,3 +41,15 @@
     grid-template-columns: repeat(auto-fill,1fr);
   }
 }
+
+.numberBtn button{
+  border: none;
+  background:none;
+  margin: var(--fs8);
+}
+.numberBtn button:hover,
+.numberBtn button.active
+{
+  color: var(--light-colors-accent-light);
+  scale: 1.2;
+}
