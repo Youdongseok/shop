@@ -21,8 +21,7 @@
   align-items: center;
   gap: var(--fs33);
 }
-.gnb > * {
-}
+
 .gnb nav,
 .gnb .icon {
   display: flex;
