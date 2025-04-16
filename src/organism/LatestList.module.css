@@ -5,17 +5,39 @@
   align-items: center;
 
   gap: var(--fs33);
-  border: 1px solid blue;
-}
-.listCon > * {
-  border: 1px solid red;
-}
-.more {
-  font-size: var(--fs12);
+ 
 }
 
+.more {
+  font-size: var(--fs12);
+  transition: color 0.3s;
+}
+.more:hover{
+  color: var(--light-colors-accent-light);
+  font-weight: bold;
+}
+.more::after{
+  content: '\F138';
+  font-family: 'bootstrap-icons';
+  position: relative;
+  transform: translateX(0);
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.more:hover::after{
+ transform: translateX(10px);
+}
 .list {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: var(--fs20);
+}
+
+
+
+@media(max-width:660px){
+  .list{
+    grid-template-columns: repeat(auto-fill,1fr);
+  }
 }
