@@ -21,6 +21,8 @@ const CartPage = lazy(() => import('./pages/CartPage'))
 
 import NotFound from './pages/NotFound'
 import ProductDetailPage from './pages/ProductDetailPage'
+import { getProductById } from './api/productsApi'
+import { detailPageLoader } from './loaders/productsLoaders'
 
 // 더 나은 로딩 컴포넌트 정의
 const Loading = () => (
@@ -41,7 +43,11 @@ const router = createBrowserRouter([
       { path: '/about', element: <AboutPage /> },
       { path: '/blog', element: <BlogPage /> },
       { path: '/cart', element: <CartPage /> },
-      { path: '/detail/:productId', element: < ProductDetailPage/> },
+      {
+        path: '/detail/:productId',
+        element: <ProductDetailPage />,
+        loader: detailPageLoader,
+      },
     ],
   },
   {

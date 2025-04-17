@@ -1,44 +1,39 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { getProductsData } from '../api/productsApi'
+import React from 'react'
+import { useLoaderData } from 'react-router-dom'
+import css from './productDetailPage.module.css'
+import { formatCurrency } from '@/utils/features'
 
-const ProductDetailPage = () => {
-  const {productId} =useParams()
-  console.log('productId:', productId)
+const DetailPage = () => {
+  const { product, relatedProducts } = useLoaderData()
+  console.log('DetailPage:product', product)
+  console.log('DetailPage:relatedProducts', relatedProducts)
 
-  const[product,setProduct]=useState(null)
-
-  useEffect(()=>{
-    const fetchProduct = async () => {
-      try {
-        const data = await getProductsData()
-        console.log('Fetched Data:', data)
-        
-        // 아이템의 id와 productId 타입을 맞추어 찾기
-        //const found = data.find(item => item.id === Number(productId))  // id가 숫자일 경우
-        const found = data.find(item => String(item.id) === productId)  // id가 문자열일 경우
-    
-        console.log('Found Product:', found)
-        setProduct(found)
-      } catch (error) {
-        console.log('error', error)
-      }
-    }
-    
-    fetchProduct()
-  },[productId])
-  if (!product) {
-    return <div>로딩 중...</div>
-  }
   return (
     <main>
-        <h2>{product.title}</h2>
-        <img src={`/public/img/${product.img}`} alt={product.title} />
-      <p>카테고리: {product.category}</p>
-      <p>가격: {product.price}</p>
-      <p>할인: {product.discount}%</p>
+      <h2>DetailPage</h2>
+      <div className={css.detailCon}>
+        <div className={css.imgWrap}>
+          <img src={`/public/img/${product.img}`} alt={product.title} />
+          {product.discount > 0 && <p className={css.discount}>{product.discount} %</p>}
+        </div>
+        <div className={css.infoWrap}>
+          <p className={css.title}>{product.title}</p>
+          <p className={css.price}>{formatCurrency(product.price)}</p>
+          <p className={css.category}>{product.category}</p>
+          <div className={css.btnWrap}>
+            <div className={css.counterArea}>
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+            <button className={css.addBtn}>장바구니 담기</button>
+          </div>
+        </div>
+      </div>
+      <div>텝메뉴</div>
+      <div>관련상품 들어가는 곳</div>
     </main>
   )
 }
 
-export default ProductDetailPage
+export default DetailPage

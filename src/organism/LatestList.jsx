@@ -33,27 +33,29 @@ const LatestList = () => {
   const skeletonArr = Array(pCount).fill(null)
   return (
     <section className={css.listCon}>
-      <div><h2>Shop The Latest</h2>
-      <div className={css.select}>
-        옵션:
-        <select
-          name="productCoun"
-          id="productCoun"
-          value={pCount}
-          onChange={e => setPCount(Number(e.target.value))}
-          className={css.selectChoice}
-        >
-          <option value="2">2개씩</option>
-          <option value="4">4개씩</option>
-          <option value="6">6개씩</option>
-          <option value="8">8개씩</option>
-        </select>
-      </div></div>
-      
+      <div>
+        <h2>Shop The Latest</h2>
+        <div className={css.select}>
+          옵션:
+          <select
+            name="productCoun"
+            id="productCoun"
+            value={pCount}
+            onChange={e => setPCount(Number(e.target.value))}
+            className={css.selectChoice}
+          >
+            <option value="2">2개씩</option>
+            <option value="4">4개씩</option>
+            <option value="6">6개씩</option>
+            <option value="8">8개씩</option>
+          </select>
+        </div>
+      </div>
+
       <Link to={'/shop'} className={css.more}>
         View All
       </Link>
-      
+
       <ul className={css.list}>
         {loading
           ? skeletonArr.map((_, i) => (

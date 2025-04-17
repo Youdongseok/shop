@@ -5,18 +5,17 @@
   align-items: center;
 
   gap: var(--fs33);
- 
 }
 
 .more {
   font-size: var(--fs12);
   transition: color 0.3s;
 }
-.more:hover{
+.more:hover {
   color: var(--light-colors-accent-light);
   font-weight: bold;
 }
-.more::after{
+.more::after {
   content: '\F138';
   font-family: 'bootstrap-icons';
   position: relative;
@@ -24,8 +23,8 @@
   display: inline-block;
   transition: transform 0.3s;
 }
-.more:hover::after{
- transform: translateX(10px);
+.more:hover::after {
+  transform: translateX(10px);
 }
 .list {
   width: 100%;
@@ -34,12 +33,12 @@
   gap: var(--fs20);
 }
 .selectChoice {
-  background:none;
-  border: none;    /* 테두리 */
-  
-  padding: 6px 12px;         /* 여백 */
-  font-size: 16px;           /* 글자 크기 */
-  color: #333;               /* 글자색 */
+  background: none;
+  border: none; /* 테두리 */
+
+  padding: 6px 12px; /* 여백 */
+  font-size: 16px; /* 글자 크기 */
+  color: #333; /* 글자색 */
   cursor: pointer;
 }
 
@@ -48,22 +47,19 @@
   background-color: #eaeaea;
 }
 
-
-
-@media(max-width:660px){
-  .list{
-    grid-template-columns: repeat(auto-fill,1fr);
+@media (max-width: 660px) {
+  .list {
+    grid-template-columns: repeat(auto-fill, 1fr);
   }
 }
 
-.numberBtn button{
+.numberBtn button {
   border: none;
-  background:none;
+  background: none;
   margin: var(--fs8);
 }
 .numberBtn button:hover,
-.numberBtn button.active
-{
+.numberBtn button.active {
   color: var(--light-colors-accent-light);
   scale: 1.2;
 }

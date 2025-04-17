@@ -28,7 +28,7 @@ const HeroSlider = () => {
         setLoading(true)
         const data = await getBannerData()
 
-        await delay(1500) // 1초 지연
+        await delay(3000) // 1초 지연
 
         setBanner(data)
         setLoading(false)

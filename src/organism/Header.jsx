@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import Logo from '@/components/Logo'
 import css from './Header.module.css'
 import { debounce } from 'lodash' // npm i lodash
+import { throttle } from '../utils/features'
 
 const Header = () => {
   const [isOn, setIsOn] = useState(false)
@@ -17,14 +18,11 @@ const Header = () => {
   }, [location.pathname])
 
   // 디바운싱된 리사이즈 핸들러
-  const handleResize = useCallback(() => {
-    const debouncedResize = debounce(() => {
-      if (window.innerWidth > 1100) {
-        setIsOn(false)
-      }
-    }, 150)
-    debouncedResize()
-  }, [])
+  const handleResize = throttle(() => {
+    if (window.innerWidth > 1100) {
+      setIsOn(false)
+    }
+  }, 1000)
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
