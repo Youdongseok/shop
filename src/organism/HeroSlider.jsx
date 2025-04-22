@@ -20,7 +20,7 @@ const HeroSlider = () => {
 
         // 스켈레톤 효과를 주기 위해 3초 대기
         // 실제 서비스에서는 사용하지 않음
-        await delay(3000)
+        await delay(300)
 
         setBanner(data)
         setLoading(false)

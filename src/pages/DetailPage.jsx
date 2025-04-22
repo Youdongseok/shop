@@ -7,10 +7,13 @@ import SimilarProducts from '@/organism/SimilarProducts'
 import Modal from '@/components/Modal'
 
 const DetailPage = () => {
-  const { product, relatedProducts } = useLoaderData()
+  const { product, filteredRelatedProducts } = useLoaderData()
+  console.log('DetailPage:product', product)
+  console.log('DetailPage:filteredRelatedProducts', filteredRelatedProducts)
+
+  const [isLoading, setIsLoading] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [count, setCount] = useState(1)
-  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     // 컴포넌트가 마운트된 직후에는 로딩 상태로 표시
@@ -43,6 +46,7 @@ const DetailPage = () => {
   const increase = () => {
     setCount(prev => prev + 1)
   }
+
   const handleAddToCart = () => {
     setIsModalOpen(true)
   }
@@ -75,7 +79,7 @@ const DetailPage = () => {
         </div>
       </div>
       <DetailTabInfo />
-      <SimilarProducts relatedProducts={relatedProducts} />
+      <SimilarProducts relatedProducts={filteredRelatedProducts} />
       {isModalOpen && <Modal product={product} count={count} onClose={closeModal} />}
     </main>
   )

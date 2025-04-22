@@ -47,7 +47,7 @@ const Modal = ({ product, count, onClose }) => {
     try {
       const cartItem = {
         id: product.id,
-        tilte: product.tilte,
+        title: product.title,
         img: product.img,
         price: product.price,
         category: product.category,
@@ -57,8 +57,8 @@ const Modal = ({ product, count, onClose }) => {
       await addToCart(cartItem)
       handleClose()
       navigate('/cart')
-    } catch (error) {
-      console.log('err', error)
+    } catch (err) {
+      console.log('err', err)
     }
   }
   return (

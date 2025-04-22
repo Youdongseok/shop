@@ -20,7 +20,6 @@ const SimilarProducts = ({ relatedProducts }) => {
             spaceBetween: 20,
             clickable: false,
           },
-
           1100: {
             slidesPerView: 5,
             spaceBetween: 50,

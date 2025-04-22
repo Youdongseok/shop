@@ -26,17 +26,16 @@ const DetailTabInfo = () => {
         <p>내용이 들어갑니다.</p>
       </div>
       <div className={`${css.tabContent} ${activeTab === 1 ? css.visible : ''}`}>
-        <h3>제목2</h3>
-        <p>내용이 들어갑니다.</p>
-        <a href="#">test1</a>
+        <h3>제목1</h3>
         <p>내용이 들어갑니다.</p>
         <p>내용이 들어갑니다.</p>
         <p>내용이 들어갑니다.</p>
+        <p>내용이 들어갑니다.</p>
+        <a href="#">test2</a>
       </div>
       <div className={`${css.tabContent} ${activeTab === 2 ? css.visible : ''}`}>
-        <h3>제목3</h3>
+        <h3>제목1</h3>
         <p>내용이 들어갑니다.</p>
-        <a href="#">test1</a>
         <p>내용이 들어갑니다.</p>
         <p>내용이 들어갑니다.</p>
         <p>내용이 들어갑니다.</p>
@@ -45,4 +44,4 @@ const DetailTabInfo = () => {
   )
 }
 
-export default DetailTabInfo
+export default React.memo(DetailTabInfo)

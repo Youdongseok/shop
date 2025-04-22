@@ -16,7 +16,7 @@ const LatestList = () => {
     const fetchProducts = async () => {
       try {
         setLoading(true)
-        await delay(3000)
+        await delay(30)
         const data = await getProductsData(`category=new&_limit=${pCount}`)
         console.log('data----', data)
 

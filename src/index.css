@@ -22,6 +22,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html,
+body {
+  /* scroll-behavior: auto !important; */
+}
 :root {
   font-family: 'Noto Sans KR', sans-serif;
   font-optical-sizing: auto;
