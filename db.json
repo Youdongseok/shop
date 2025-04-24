@@ -1069,5 +1069,19 @@
       "discount": 20,
       "count": 1
     }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "todosDesc": "할일 내용이 입력되는 곳",
+      "createAt": "2025.04.24",
+      "isDone": false
+    },
+    {
+      "id": 2,
+      "todosDesc": "할일 내용이 입력되는 곳",
+      "createAt": "2025.04.25",
+      "isDone": false
+    }
   ]
 }

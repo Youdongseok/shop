@@ -68,7 +68,7 @@
     position: fixed;
     width: 70%;
     height: 100%;
-    border: 2px solid red;
+    border: 2px solid var(--dark-colors-accent-dark);
     top: 0;
     right: -100%;
     background-color: white;
